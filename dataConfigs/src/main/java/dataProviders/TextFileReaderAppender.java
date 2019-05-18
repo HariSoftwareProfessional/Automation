@@ -35,7 +35,7 @@ public class TextFileReaderAppender {
 	
 	public static void appendData() throws IOException{
 		try {
-			String data = "test data  added to the file @::"+java.time.LocalDate.now();
+			String data = "test data  added to the file @::"+java.time.LocalDateTime.now();
 		File file = new File(textFilePath);
 		if(!file.exists()) {
 			file.createNewFile();

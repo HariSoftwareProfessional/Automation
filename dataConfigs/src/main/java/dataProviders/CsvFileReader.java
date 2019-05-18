@@ -1,9 +1,7 @@
 package dataProviders;
 
 import java.io.FileReader;
-
 import com.opencsv.CSVReader;
-
 import managers.FileReaderManager;
 
 public class CsvFileReader {
@@ -20,7 +18,7 @@ public class CsvFileReader {
 			// we are going to read data line by line
 			while ((nextRecord = csvReader.readNext()) != null) {
 				for (String cell : nextRecord) {
-					System.out.println(cell);
+					System.out.print(cell+"\t");
 				}
 				System.out.println();
 			}

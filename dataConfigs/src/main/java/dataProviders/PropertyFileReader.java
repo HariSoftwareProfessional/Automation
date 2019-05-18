@@ -2,7 +2,9 @@ package dataProviders;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileNotFoundException;
 import java.util.Properties;
+import java.io.IOException;
 
 public class PropertyFileReader {
 	
@@ -17,10 +19,10 @@ public class PropertyFileReader {
 			try {
 				properties.load(reader);
 				reader.close();
-			}catch(Exception e) {
+			}catch(IOException e) {
 				e.printStackTrace();
 			}
-		}catch(Exception e) {
+		}catch(FileNotFoundException e) {
 			e.printStackTrace();
 			throw new RuntimeException("configuration.properties not found at:"+propertyFilePath);
 		}
